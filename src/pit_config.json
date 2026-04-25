@@ -1,0 +1,130 @@
+{
+  "$schema": "../config/schema.json",
+  "title": "Pit Scouting",
+  "page_title": "REBUILT Pit Scouting",
+  "sections": [
+    {
+      "name": "General",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "title": "Team Number",
+          "type": "number",
+          "required": true,
+          "code": "teamNumber"
+        }
+      ]
+    },
+    {
+      "name": "Drivetrain",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "title": "Drive Train Type",
+          "type": "select",
+          "required": true,
+          "code": "dtType",
+          "choices": {
+            "swerve": "Swerve",
+            "differential": "Differential"
+          },
+          "defaultValue": "swerve"
+        },
+        {
+          "title": "Motor Type",
+          "type": "select",
+          "required": true,
+          "code": "dtMotor",
+          "choices": {
+            "neo": "NEO",
+            "falcon": "Falcon",
+            "cim": "CIM",
+            "minicim": "MiniCIM",
+            "other": "Other"
+          },
+          "defaultValue": "neo"
+        }
+      ]
+    },
+    {
+      "name": "Mechanism",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "title": "Intake Type",
+          "type": "select",
+          "required": true,
+          "code": "intakeType",
+          "choices": {
+            "overBumper": "Over the bumper",
+            "feedStationDump": "Feed station dump",
+            "both": "Both",
+            "none": "None"
+          },
+          "defaultValue": "none"
+        },
+        {
+          "title": "Shooter Style",
+          "type": "select",
+          "required": true,
+          "code": "shooterStyle",
+          "choices": {
+            "singleTurret": "Single Turret",
+            "multipleTurret": "Multiple Turret",
+            "cascade": "Cascade",
+            "none": "None"
+          },
+          "defaultValue": "none"
+        }
+      ]
+    },
+    {
+      "name": "Dimensions",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "title": "Width (inches)",
+          "type": "number",
+          "required": true,
+          "code": "width",
+          "defaultValue": 28,
+          "min": 0
+        },
+        {
+          "title": "Length (inches)",
+          "type": "number",
+          "required": true,
+          "code": "length",
+          "defaultValue": 28,
+          "min": 0
+        },
+        {
+          "title": "Height (inches)",
+          "type": "number",
+          "required": true,
+          "code": "height",
+          "defaultValue": 30,
+          "min": 0
+        }
+      ]
+    },
+    {
+      "name": "Computer Vision",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "title": "Vision Type",
+          "type": "select",
+          "required": true,
+          "code": "visionType",
+          "choices": {
+            "limelite": "Limelite",
+            "webcam": "Webcam",
+            "none": "None"
+          },
+          "defaultValue": "none"
+        }
+      ]
+    }
+  ]
+}

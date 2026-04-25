@@ -1,11 +1,10 @@
 {
   "$schema": "../schema.json",
   "title": "QRScout",
-  "page_title": "REBUILT",
+  "page_title": "REBUILT Match Scouting",
   "sections": [
     {
       "name": "Prematch",
-      "preserveDataOnReset": true,
       "fields": [
         {
           "title": "Scouter Initials",
@@ -26,7 +25,6 @@
           "title": "Robot",
           "type": "select",
           "required": true,
-          "preserveDataOnReset": true,
           "code": "robot",
           "choices": {
             "R1": "Red 1",
@@ -66,42 +64,23 @@
       "fields": [
         {
           "code": "aBalls",
-          "title": "Balls Scored",
+          "title": "Fuel Scored",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
-          "required": false,
-          "steps": [1, 3, 5]
+          "steps": [1, 2]
         },
         {
-          "code": "aMiss",
-          "title": "Missed Shots",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false,
-          "steps": [1, 3, 5]
-        },
-        {
-          "code": "aBump",
-          "title": "Travel over Bump",
+          "code": "aLine",
+          "title": "Left Starting Line",
           "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "aTrench",
-          "title": "Travel over Trench",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
+          "defaultValue": false
         },
         {
           "code": "aTower",
           "title": "Tower Scoring",
           "type": "boolean",
-          "defaultValue": false,
-          "required": false
+          "defaultValue": false
         }
       ]
     },
@@ -157,90 +136,59 @@
       ]
     },
     {
+      "name": "Performance",
+      "fields": [
+        {
+          "code": "speed",
+          "title": "Robot Speed",
+          "type": "rating",
+          "defaultValue": 0
+        },
+        {
+          "code": "driver",
+          "title": "Driver Skill",
+          "type": "rating",
+          "defaultValue": 0
+        },
+        {
+          "code": "defense",
+          "title": "Defense Prowess",
+          "type": "rating",
+          "defaultValue": 0
+        },
+        {
+          "code": "stability",
+          "title": "Stability",
+          "type": "select",
+          "choices": {
+            "solid": "Solid",
+            "tippy": "Tippy",
+            "highCOG": "High COG"
+          },
+          "defaultValue": "solid"
+        }
+      ]
+    },
+    {
       "name": "Postmatch",
       "preserveDataOnReset": false,
       "fields": [
         {
-          "code": "broke",
-          "title": "Robot Broke",
-          "type": "boolean",
-          "defaultValue": false,
+          "code": "co",
+          "title": "Strategic Comments",
+          "type": "text",
           "required": false
         },
         {
-          "code": "Dth",
-          "title": "Died/Tipped Over",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "RGFlag",
-          "title": "Red/Green Flag",
+          "code": "vibe",
+          "title": "Robot Reliability",
           "type": "select",
           "choices": {
-            "None": "None",
-            "Red": "Red",
-            "Green": "Green"
+            "solid": "Solid",
+            "janky": "Janky",
+            "dead": "Died on Field"
           },
-          "required": false
-        },
-        {
-          "code": "driverSkill",
-          "title": "Driver Skill",
-          "type": "rating",
-          "defaultValue": 0,
-          "required": false
-        },
-        {
-          "code": "roleOff",
-          "title": "Offense",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "roleCyc",
-          "title": "Cycling",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "rolePas",
-          "title": "Passing",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "roleHerd",
-          "title": "Herding",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "roleDef",
-          "title": "Defense",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "roleShootInt",
-          "title": "Shoot While Intaking",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "co",
-          "title": "Comments",
-          "type": "text",
-          "min": 0,
-          "max": 300,
-          "required": true
+          "defaultValue": "solid"
         }
       ]
     }

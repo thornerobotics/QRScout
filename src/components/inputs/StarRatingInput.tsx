@@ -17,8 +17,8 @@ export default function StarRatingInput(data: StarRatingInputProps) {
           type="button"
           className={`text-2xl leading-none focus:outline-none ${
             star <= (hovered || current)
-              ? 'text-yellow-400'
-              : 'text-gray-300 dark:text-yellow-900'
+              ? 'text-gray-400'
+              : 'text-gray-300 dark:text-gray-700'
           }`}
           onClick={() => data.onChange(star)}
           onMouseEnter={() => setHovered(star)}
