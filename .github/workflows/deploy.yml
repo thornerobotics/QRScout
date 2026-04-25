@@ -21,6 +21,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true # Addressing deprecation by ensuring actions use modern node
+
 jobs:
   # Single deploy job since we're just deploying
   deploy:
@@ -34,7 +37,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22 # Using current stable LTS
           cache: 'npm'
       - name: Install dependencies
         run: npm install
